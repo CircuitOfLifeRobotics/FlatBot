@@ -8,6 +8,12 @@ import edu.wpi.first.wpilibj.Joystick.RumbleType;
 /**
  * ControllersHelper elimanates the need for classes to create copies of the xboxes.
  * It also automatically creates deadzones for the axes and provides xbox value mapping.
+ * <p>
+ * Note: This could be implemented in a way that is not dependent of the number of xboxes
+ * present. However, it would cause the coder to spend more time trying to get input from it,
+ * which is why it has not been restructured.
+ * </p>
+ * 
  * @author Bryan
  */
 public class XboxHelper {

@@ -8,12 +8,18 @@ public class OI {
 	
 	public Joystick xbox;
 	
+	
 	public OI() {
 		xbox = new Joystick(0);
 	}
+	
+	
+	// OPERATOR BEHAVIOR
+	
 	public double getManualDrive_ForwardValue(){
 		return XboxHelper.getShooterAxis(XboxHelper.AXIS_LEFT_Y);
 	}
+	
 	public double getManualDrive_RotateValue(){
 		return XboxHelper.getShooterAxis(XboxHelper.AXIS_RIGHT_X);
 	}

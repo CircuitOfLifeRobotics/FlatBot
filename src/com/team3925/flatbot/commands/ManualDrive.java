@@ -1,28 +1,22 @@
 package com.team3925.flatbot.commands;
 
-import com.team3925.flatbot.OI;
 import com.team3925.flatbot.Robot;
-import com.team3925.flatbot.RobotMap;
-import com.team3925.flatbot.subsystems.DriveTrain;
-import com.team3925.flatbot.util.hidhelpers.XboxHelper;
+import com.team3925.flatbot.util.CommandPlus;
 
-import edu.wpi.first.wpilibj.command.Command;
-
-public class ManualDrive extends Command{
-	private final DriveTrain drivetrain = Robot.drivetrain;
-	private final OI oi = new OI();
+public class ManualDrive extends CommandPlus {
+	
+	public ManualDrive() {
+		super("ManualDrive");
+		requires(drivetrain);
+	}
 	
 	@Override
 	protected void initialize() {
-		
-	}
-	public ManualDrive() {
-		requires(drivetrain);
 	}
 
 	@Override
 	protected void execute() {
-		drivetrain.arcadeDriveVal(oi.getManualDrive_RotateValue(), oi.getManualDrive_ForwardValue());
+		Robot.drivetrain.arcadeDrive(Robot.oi.getManualDrive_RotateValue(), Robot.oi.getManualDrive_ForwardValue());
 	}
 
 	@Override
@@ -32,12 +26,6 @@ public class ManualDrive extends Command{
 
 	@Override
 	protected void end() {
-		
-	}
-
-	@Override
-	protected void interrupted() {
-		
 	}
 
 }
